@@ -27,14 +27,36 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         self.present(resim,animated: true);
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let resim = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else{return;}
         imgResim.image=resim;
+    
+        guard let ciResim=CIImage(image: resim) else {fatalError("resim CIIMAGE'e çevrilemedi");}
+        
+        algila(resim: ciResim);
+        
         self.dismiss(animated: true, completion: nil);
     
     }
     
-    
+    func algila(resim:CIImage){
+        guard let model=try? VNCoreMLModel(for: Inceptionv3().model) else {fatalError("Model Yüklenemedi");}
+        
+        let istek=VNCoreMLRequest(model: model) { (sonuc, hata) in
+            guard let sonuclar=sonuc.results as? [VNClassificationObservation] else{fatalError("sonuclar yuklenemedi");}
+            
+            print(sonuclar);
+        }
+        let tutucu=VNImageRequestHandler(ciImage: resim);
+        
+        do{
+            try tutucu.perform([istek]);
+        }
+        catch{
+            debugPrint("HATA 54 \(error.localizedDescription)");
+        }
+        
+    }
     
 }
 
