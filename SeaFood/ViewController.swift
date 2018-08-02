@@ -45,7 +45,15 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         let istek=VNCoreMLRequest(model: model) { (sonuc, hata) in
             guard let sonuclar=sonuc.results as? [VNClassificationObservation] else{fatalError("sonuclar yuklenemedi");}
             
-            print(sonuclar);
+            if let ilkSonuc=sonuclar.first{
+                if ilkSonuc.identifier.contains("hotdog"){
+                    self.lblSonuc.text="Hotdog";
+                }
+                else{
+                    self.lblSonuc.text="Hotdog Değil";
+                }
+            }
+            
         }
         let tutucu=VNImageRequestHandler(ciImage: resim);
         
