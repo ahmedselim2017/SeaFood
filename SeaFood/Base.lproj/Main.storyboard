@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeaFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBx-iB-WYl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBO-g0-Ap1">
+                                        <rect key="frame" x="311" y="27" width="48" height="36"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Galeri">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnGaleriBasildi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8k-5e-vYf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeaFood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEJ-NG-EoL">
+                                        <rect key="frame" x="112.5" y="30.5" width="150" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="6HN-Au-TDE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1137254902" green="0.6078695059" blue="0.96409267190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="9dE-FH-ItY"/>
+                                    <constraint firstItem="gEJ-NG-EoL" firstAttribute="centerY" secondItem="wBx-iB-WYl" secondAttribute="centerY" constant="10" id="DNs-0X-RSa"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBO-g0-Ap1" secondAttribute="trailing" constant="16" id="TME-7D-UwZ"/>
+                                    <constraint firstItem="YBO-g0-Ap1" firstAttribute="centerY" secondItem="wBx-iB-WYl" secondAttribute="centerY" constant="10" id="aSC-Uw-yQR"/>
+                                    <constraint firstItem="gEJ-NG-EoL" firstAttribute="centerX" secondItem="wBx-iB-WYl" secondAttribute="centerX" id="qS3-rX-Twh"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tC9-ca-cs5">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tC9-ca-cs5" secondAttribute="bottom" id="H2z-l6-bAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wBx-iB-WYl" secondAttribute="trailing" id="ITt-bS-5fE"/>
+                            <constraint firstItem="wBx-iB-WYl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LPW-4E-uU9"/>
+                            <constraint firstItem="wBx-iB-WYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T82-Sj-lX1"/>
+                            <constraint firstItem="tC9-ca-cs5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TfQ-zk-f4V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tC9-ca-cs5" secondAttribute="trailing" id="c9Z-wX-AfS"/>
+                            <constraint firstItem="tC9-ca-cs5" firstAttribute="top" secondItem="wBx-iB-WYl" secondAttribute="bottom" id="whC-qp-m24"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgResim" destination="tC9-ca-cs5" id="gRM-cR-Hzp"/>
+                        <outlet property="lblSonuc" destination="gEJ-NG-EoL" id="ynA-RG-Xiv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
